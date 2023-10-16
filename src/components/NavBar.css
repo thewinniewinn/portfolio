@@ -5,21 +5,46 @@
     padding: 1rem;
 }
 
+.logo {
+    font-size: 2rem;
+}
+
 .nav-menu {
     display: flex;
+    list-style: none;
+    padding: 0;
 }
 
 .nav-menu li {
-    padding: 0 1rem;
+    margin: 0 1rem;
+    position: relative;
 }
 
 .nav-menu li a {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
+    position: relative;
 }
+
+.nav-menu li a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #191717;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
 .hamburger {
     display: none;
 }
+
 @media screen and (max-width: 1040px) {
     .nav-menu {
         flex-direction: column;
@@ -30,21 +55,24 @@
         background: #f6f6f6;
         position: absolute;
         top: 0;
-        left: 100%;
+        left: -100%;
         z-index: -3;
         transition: 0.3s;
     }
-    .nav-menu.active{
+
+    .nav-menu.active {
         left: 0;
     }
+
     .nav-menu li {
         padding: 1rem 0;
     }
+
     .nav-menu li a {
         font-size: 1.2rem;
     }
+
     .hamburger {
         display: initial;
     }
-
 }

@@ -8,14 +8,14 @@ import Resources from "./routes/Resources"
 import {Routes, Route} from "react-router-dom"
 function App() {
   return (
-    <>
+    <div className="container">
     <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/blogs" element={<Blogs/>}></Route>
       <Route path="/projects" element={<Projects/>}></Route>
       <Route path="/resources" element={<Resources/>}></Route>
     </Routes>
-    </>
+    </div>
   );
 }
 
